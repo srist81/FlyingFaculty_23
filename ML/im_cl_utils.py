@@ -142,5 +142,24 @@ def move_X(X,dx,dy):
 
     return X_moved
 
-        
+def plot_accu(hist: dict , style = "ggplot"):
+  plt.style.use(style)
+  plt.plot(hist['accuracy'], label = 'accuracy')
+  plt.plot(hist["val_accuracy"]  ,label = "val accuracy")
+  plt.title("Accuracy vs Val accuracy")
+  plt.xlabel("Epochs")
+  plt.ylabel("Accuracy")
+  plt.legend(loc = "lower right")
+  plt.show()
+  
+  
+def plot_loss(hist: dict , style = "ggplot"):
+  plt.style.use(style)
+  plt.plot(hist['loss'], label = 'loss')
+  plt.plot(hist["val_loss"]  ,label = "val loss")
+  plt.title("Loss vs Val loss")
+  plt.xlabel("Epochs")
+  plt.ylabel("Loss")
+  plt.legend()
+  plt.show()
     
